@@ -7,6 +7,8 @@
 #define READ_BUFFER_SIZE 1024
 
 
+int find_temperature(char* city);
+float find_stock_price(char* stock);
 
 
 
