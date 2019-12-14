@@ -128,3 +128,23 @@ int main(int argc, char* argv[])
     printf("Exiting client!\n");
     
 }
+
+/*------------------------------------------------------------------------------------*/
+
+/* This function will display the options to select to send to server & server will return back result */
+void display_weather_menu()
+{
+    char *menu = "\n\n\n\
+                Weather Forecast:\n\
+                    1. Dallas\n\
+                    2. Seattle\n\
+                    3. Chicago\n\
+                    4. Miami\n\
+                    5. Phoenix\n\
+                    6. Detroit\n\
+                    7. QUIT PROGRAM\n\
+                 \n";
+    
+     printf("%s", menu);
+     printf("Please enter a number or 7 to quit: ");
+}
