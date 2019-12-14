@@ -6,6 +6,18 @@
 #include <netinet/in.h>
 #include "server.h"
 
+char * cities[]   = { "Dummy","Dallas", "Seattle", "Chicago", "Miami", "Phoenix", "Detroit"};
+int cities_size = 7;
+int temperatures[] = { -1, 72, 55, 40, 75, 50, 76};
+
+char * stocks[]   = { "Dummy","Apple", "Microsoft", "Tesla", "Uber", "CVS", "Walgreens"};
+int stocks_size = 7;
+float stock_prices[] = {-1.0, 59.21, 55.23, 40.23, 75.21, 60.00, 60.72};
+
+int client_count = 0;
+int new_connection_sd;
+int port = PORT;
+
 int main(int argc, char* argv[])
 {
     int server_sd;                                              /* sd stands for socket descriptor*/
