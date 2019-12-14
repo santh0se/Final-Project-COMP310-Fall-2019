@@ -13,7 +13,9 @@ void* weather_worker_thread_start(void * new_connection_sd);
 void* stock_worker_thread_start(void* sd);
 
 
-
+pthread_t worker_threads[MAX_WORKER_THREADS];
+pthread_attr_t attr;
+pthread_mutex_t worker_mutex;
 
 
 
