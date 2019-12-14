@@ -114,6 +114,20 @@ float find_stock_price(char* stock)
     return -1.0;
 }
 
+    
+ void* weather_worker_thread_start(void* sd)
+{
+    char city[50] = {0};
+    char client_name[50] = {0};
+    char server_response[1024] = {0};
+    int bytes_read;
+    char read_buffer[READ_BUFFER_SIZE] = {0};                   /* this array is to read the data from client */
+    int socket_sd;
+    int * temp;
+    
+    printf("Waiting for message from client ... \n");
+    temp = (int *)sd;
+    socket_sd = *temp;
   
 }
 
