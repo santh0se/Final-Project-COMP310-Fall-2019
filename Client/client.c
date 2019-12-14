@@ -25,6 +25,8 @@ int main(int argc, char* argv[])
     int addr_length = sizeof(server_address);
     char * client_hello = "Hello, this is client!";
     int done = 0;
+    int server_port = SERVER_PORT;
+    int client_type = -1;
     
     printf("Starting client.\n");
     
