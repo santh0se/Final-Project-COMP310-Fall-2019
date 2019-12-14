@@ -9,6 +9,9 @@
 
 int find_temperature(char* city);
 float find_stock_price(char* stock);
+void* weather_worker_thread_start(void * new_connection_sd);
+void* stock_worker_thread_start(void* sd);
+
 
 
 
