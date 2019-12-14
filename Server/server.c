@@ -158,6 +158,34 @@ float find_stock_price(char* stock)
     
     }
     return NULL;
+     
+void* stock_worker_thread_start(void* sd)
+{
+    char stock_name[50] = {0};
+    char client_name[50] = {0};
+    char server_response[1024] = {0};
+    int bytes_read;
+    char read_buffer[READ_BUFFER_SIZE] = {0};                   /* this array is to read the data from client */
+    int socket_sd;
+    int * temp;
+    
+    printf("Waiting for message from client ... \n");
+    temp = (int *)sd;
+    socket_sd = *temp;
+
+/* Start READING bytes from client */
+    while((bytes_read = read(socket_sd, read_buffer, READ_BUFFER_SIZE)) > 0 )
+    {
+        read_buffer[bytes_read] = 0;                            /* make it as a string by adding 0 at the end of number of bytes read */
+        printf("Bytes sent by client: %s \n", read_buffer);
+        
+    /*Start SENDING same bytes to client */
+        /*strcpy(city, read_buffer);*/
+        
+        sscanf(read_buffer,"%s %s\n", client_name, stock_name);
+        printf("STOCK_NAME: %s\n", stock_name);
+        printf("CLIENT_NAME: %s\n", client_name);
+        float price = find_stock_price(stock_name);
   
 }
 
