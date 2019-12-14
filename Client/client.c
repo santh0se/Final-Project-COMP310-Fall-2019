@@ -148,3 +148,23 @@ void display_weather_menu()
      printf("%s", menu);
      printf("Please enter a number or 7 to quit: ");
 }
+
+
+/* This function will display the options to select to send to server & server will return back result */
+void display_stock_menu()
+{
+    char *menu = "\n\n\n\
+                Stock Ticker:\n\
+                    1. Apple\n\
+                    2. Microsoft\n\
+                    3. Tesla\n\
+                    4. Uber\n\
+                    5. CVS\n\
+                    6. Walgreens\n\
+                    7. QUIT PROGRAM\n\
+                 \n";
+    
+     printf("%s", menu);
+     printf("Please enter a number or 7 to quit: ");
+}
+
