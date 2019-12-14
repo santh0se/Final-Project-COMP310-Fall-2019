@@ -128,6 +128,36 @@ float find_stock_price(char* stock)
     printf("Waiting for message from client ... \n");
     temp = (int *)sd;
     socket_sd = *temp;
+     
+    /* Start READING bytes from client */
+    while((bytes_read = read(socket_sd, read_buffer, READ_BUFFER_SIZE)) > 0 )
+    {
+        read_buffer[bytes_read] = 0;                            /* make it as a string by adding 0 at the end of number of bytes read */
+        printf("Bytes sent by client: %s \n", read_buffer);
+        
+    /*Start SENDING same bytes to client */
+        /*strcpy(city, read_buffer);*/
+        
+        sscanf(read_buffer,"%s %s\n", client_name, city);
+       
+        int temperature = find_temperature(city);
+        if(temperature != -1)
+        {
+            sprintf(server_response, "The temperature of %s is: %d F\n", city, temperature);
+        }
+        else
+        {
+            sprintf(server_response, "This is the WEATHER SERVER. Please check your port %d to talk to WEATHER server or you sent an unknown city: %s\n", port, city);
+        }
+        
+        /* printf("Sending same message back to client!\n");
+           send(new_connection_sd, read_buffer, strlen(read_buffer),0); -- echo line */
+        
+        printf("Sending to client %s: %s\n",client_name,server_response);
+        send(socket_sd, server_response, strlen(server_response),0);
+    
+    }
+    return NULL;
   
 }
 
