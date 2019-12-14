@@ -96,8 +96,25 @@ int main(int argc, char* argv[])
         send(new_connection_sd, read_buffer, strlen(read_buffer),0);
     }
          
-}
-  
 
+
+/*------------------------------------------------------------------------------------------------------*/
+float find_stock_price(char* stock)
+{
+    printf("STOCK: %s\n", stock);
+    for(int i = 0; i < stocks_size; i++)
+    {
+        if(strcmp(stock, stocks[i]) == 0)
+        {
+            return stock_prices[i];
+        }
+    }
+    
+    printf("Did not find the stock %s in the database!", stock);
+    return -1.0;
+}
+
+  
+}
 
 
