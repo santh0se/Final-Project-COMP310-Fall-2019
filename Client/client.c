@@ -3,9 +3,17 @@
 #include <unistd.h>
 #include <string.h>
 #include "client.h"
-#include <sys/socket.h>                             /* these are socket-related */
-#include <netinet/in.h>
-#include <arpa/inet.h>
+#include <sys/socket.h>                       /*  socket-related */
+#include <netinet/in.h>                       /*  socket-related */
+#include <arpa/inet.h>                        /*  socket-related */
+
+char * cities[] = { "Dummy","Dallas", "Seattle", "Chicago", "Miami", "Phoenix", "Detroit"};  /* dummy is to remove the 0th index */
+char client_name[50] = {0};
+
+char * stocks[]   = { "Dummy","Apple", "Microsoft", "Tesla", "Uber", "CVS", "Walgreens"};
+int stocks_size = 7;
+
+/*-----------------------------------------------------------------------------------------*/
 
 int main(int argc, char* argv[])
 {
