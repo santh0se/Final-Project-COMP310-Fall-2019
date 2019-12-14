@@ -1,6 +1,20 @@
  # Title: Socket Programming For Weather & Stocks
  # Team Members: Vimal Sekhar & Irfan Poljak
- # Summary: Socket programming is a way of connecting two nodes on a particular network to communicate with one another. As one node  (socket) listens to a particular port, the other node (socket) reaches out to the other to form a connection. The server forms the listener socket as opposed to the client which reaches out to the server. Typically, such programs are used to communicate between various different processes running on different systems. The essential purpose is to create a client-server environment. Regarding the client program, when it is started, it will provide a command line interface to the user and will ask whether it is weather or stock request. Then it will make a connection to the server (based off the port number) and send the request in a pre-defined format which the server understands. The client will then wait for the response and when the response comes from the server, it displays the response message in the terminal window. It will then ask/wait for the next command/request from the user and repeat the same process (until the user asks to quit the program). So, the client can run on the same computer where multiple terminals can be started for the clients to simulate multiple client communication. Or, if another computer is on the same network that can access the server IP, then we can run the program in the same way. This is essentially the idea of socket-programming (our project).
+ # Project Summary Below: 
+ 
+     Socket programming is a way of connecting two nodes on a particular network to communicate with one another. 
+     As one node  (socket) listens to a particular port, the other node (socket) reaches out to the other to form 
+     a connection. The server forms the listener socket as opposed to the client which reaches out to the server. 
+     Typically, such programs are used to communicate between various different processes running on different systems. 
+     The essential purpose is to create a client-server environment. Regarding the client program, when it is started, 
+     it will provide a command line interface to the user and will ask whether it is weather or stock request. Then it 
+     will make a connection to the server (based off the port number) and send the request in a pre-defined format which
+     the server understands. The client will then wait for the response and when the response comes from the server, 
+     it displays the response message in the terminal window. It will then ask/wait for the next command/request from the 
+     user and repeat the same process (until the user asks to quit the program). So, the client can run on the same compu-
+     -ter where multiple terminals can be started for the clients to simulate multiple client communication. Or, if another
+     computer is on the same network that can access the server IP, then we can run the program in the same way. This is
+     essentially the idea of socket-programming (our project).
 
                           
                  ----------------- Socket Programming Project Instructions:----------- 
