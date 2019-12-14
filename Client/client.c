@@ -28,7 +28,42 @@ int main(int argc, char* argv[])
     int server_port = SERVER_PORT;
     int client_type = -1;
     
-    printf("Starting client.\n");
+    printf("DEBUG: %d",argc);
+    
+    if(argc < 3)  /* num args less than 3 = error */
+      {
+         printf("Usage: ./runclient <client-name> W/S [port-number]\n");
+         exit(1);
+      }
+ 
+    if(argc == 4) /* if optional port provided*/
+      {
+         printf("DEBUG ARGV[3]: %s\n", argv[3]);
+         server_port = atoi(argv[3]);
+      }
+    else
+      {
+         server_port = SERVER_PORT;
+      }
+    
+    strcpy(client_name, argv[1]);
+    printf("CLIENT NAME: %s\n", client_name);
+   
+    if(strcmp(argv[2],"W") == 0)
+     {
+        printf("Starting WEATHER CLIENT...\n");
+        client_type = 1;
+     }
+    else if (strcmp(argv[2],"S")==0)
+     {
+        printf("Starting STOCK CLIENT...\n");
+        client_type = 2;
+     }
+    else
+     {
+        printf("Unknown client type argument %s\n",argv[2]);
+        exit(1);
+     }
     
 /* ----------------------------------------------------------------------------------------- */
     /* Create Socket Structure ... */
